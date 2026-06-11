@@ -122,7 +122,7 @@ body.teacher-mode .side-wb{display:block;}
   opacity:0; pointer-events:none;
   transition:opacity .55s ease, transform .55s ease;
   transform:translateY(16px);
-  overflow:hidden;
+  overflow-x:hidden; overflow-y:auto;    /* 視窗放不下時允許垂直捲動 */
 }
 .slide.active{opacity:1; pointer-events:auto; transform:translateY(0);}
 .slide-inner{width:100%; max-width:1500px; max-height:100%;}
@@ -254,6 +254,9 @@ p, li{font-family:var(--sans); font-size:35px; line-height:1.65; color:var(--ink
   .zpat.flip .img-col{order:0;}
   .h-grid{grid-template-columns:repeat(2,1fr);}
   .over-grid{grid-template-columns:1fr 1fr;}
+  /* 單欄堆疊後縮圖避免太高 */
+  .scene .img-col, .overview .img-col,
+  .zpat .img-col, .result .img-col{min-height:280px;}
 }
 
 /* ===== 手機（≤720px）===== */
